@@ -8,10 +8,11 @@ import { Confession } from "../confession/Confession";
 export const Router: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />} />
-      <Route index element={<Home />} />
-      <Route path="/misdemeanor" element={<Misdemeanor />} />
-      <Route path="/confession" element={<Confession />} />
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route path="misdemeanor" element={<Misdemeanor />} />
+        <Route path="confession" element={<Confession />} />
+      </Route>
     </Routes>
   );
 };
