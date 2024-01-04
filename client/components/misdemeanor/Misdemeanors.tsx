@@ -8,8 +8,9 @@ interface MisdemeanorProps {
 export const Misdemeanors: React.FC<MisdemeanorProps> = ({ misdemeanors }) => {
   return (
     <>
-      <div>
+      <div style={{ display: "inline-table" }}>
         {misdemeanors ? (
+          /*
           <div style={{ display: "flex", flexDirection: "column" }}>
             {misdemeanors.map((misdemeanor, index) => (
               <div key={index}>
@@ -18,7 +19,25 @@ export const Misdemeanors: React.FC<MisdemeanorProps> = ({ misdemeanors }) => {
                 <p>{misdemeanor.misdemeanour}</p>
               </div>
             ))}
-          </div>
+          </div>*/
+          <table>
+            <thead>
+              <tr style={{ margin: "0 5px" }}>
+                <th>Citizen ID</th>
+                <th>Misdemeanour</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {misdemeanors.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.citizenId}</td>
+                  <td>{item.misdemeanour}</td>
+                  <td>{item.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         ) : (
           <p>Loading data...</p>
         )}
