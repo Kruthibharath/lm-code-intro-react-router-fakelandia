@@ -22,7 +22,7 @@ export const Misdemeanors: React.FC<MisdemeanorProps> = ({ misdemeanors }) => {
           </div>*/
           <table>
             <thead>
-              <tr style={{ margin: "0 5px" }}>
+              <tr>
                 <th>Citizen ID</th>
                 <th>Misdemeanour</th>
                 <th>Date</th>
