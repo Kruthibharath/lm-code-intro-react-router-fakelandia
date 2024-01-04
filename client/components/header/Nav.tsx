@@ -8,7 +8,12 @@ export const Nav: React.FC = () => {
       className="is-flex is-flex-direction-row is-justify-content-space-evenly"
     >
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Home
+        </NavLink>
       </li>
       <li>
         <NavLink to="/misdemeanor">Misdemeanor</NavLink>
