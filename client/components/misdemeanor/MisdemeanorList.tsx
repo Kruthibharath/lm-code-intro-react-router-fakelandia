@@ -1,34 +1,38 @@
-import React, { useEffect, useState } from "react";
-import { Misdemeanour } from "../../types/misdemeanor.types";
+import React, { useEffect } from "react";
+import { useMisdemeanorsContext } from "./MisdemeanorsContext";
 import { Misdemeanors } from "./Misdemeanors";
+//import { Misdemeanour } from "../../types/misdemeanor.types";
 
 /*interface MisdemeanorListProps {
   misdemeanors: Misdemeanour[];
-}*/
+}
+const useMisdemeanorsContext = () =>
+  useContext({ misdemeanors, setMisdemeanors });
+*/
 
 export const MisdemeanorList: React.FC = () => {
-  const [misdemeanorData, setMisdemeanorData] = useState<Misdemeanour[]>([]);
+  const [misdemeanors, setMisdemeanors] = useMisdemeanorsContext();
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8080/api/misdemeanours/3"
+          "http://localhost:8080/api/misdemeanours/4"
         );
         const data = await response.json();
         console.log(data);
-        setMisdemeanorData(data.misdemeanours || []);
+        setMisdemeanors(data.misdemeanours || []);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
     fetchData();
-  }, []);
+  }, [misdemeanors.length, setMisdemeanors]);
   return (
     <>
       <div>
         <h2>Misdemeanors List</h2>
-        {misdemeanorData && misdemeanorData.length > 0 ? (
-          <Misdemeanors misdemeanors={misdemeanorData} />
+        {misdemeanors && misdemeanors.length > 0 ? (
+          <Misdemeanors misdemeanors={misdemeanors} />
         ) : (
           <p>No misdemeanors found!!</p>
         )}

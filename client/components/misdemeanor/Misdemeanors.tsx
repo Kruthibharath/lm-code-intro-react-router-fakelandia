@@ -24,16 +24,16 @@ export const Misdemeanors: React.FC<MisdemeanorProps> = ({ misdemeanors }) => {
             <thead>
               <tr>
                 <th>Citizen ID</th>
-                <th>Misdemeanour</th>
                 <th>Date</th>
+                <th>Misdemeanour</th>
               </tr>
             </thead>
             <tbody>
               {misdemeanors.map((item, index) => (
                 <tr key={index}>
                   <td>{item.citizenId}</td>
-                  <td>{item.misdemeanour}</td>
                   <td>{item.date}</td>
+                  <td>{item.misdemeanour}</td>
                 </tr>
               ))}
             </tbody>
