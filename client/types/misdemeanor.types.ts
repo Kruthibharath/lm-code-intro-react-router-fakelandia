@@ -1,8 +1,8 @@
 export const MISDEMEANOURS = [
-  "rudeness",
-  "vegetables",
-  "lift",
-  "united",
+  "🤪 - rudeness",
+  "🥗 - vegetables",
+  "🗣 - lift",
+  "😈 - united",
 ] as const;
 export type MisdemeanourKind = (typeof MISDEMEANOURS)[number];
 
