@@ -1,5 +1,6 @@
 import React from "react";
 import { MisdemeanourKind } from "./../../types/misdemeanor.types";
+import { useMisdemeanorsContext } from "./MisdemeanorsContext/useMisdemeanorsContext";
 
 interface MisdemeanorFilterProps {
   handleFilter: (selectedFilter: MisdemeanourKind | "All") => void;
@@ -10,9 +11,13 @@ export const MisdemeanorFilter: React.FC<MisdemeanorFilterProps> = ({
   handleFilter,
   currentFilter,
 }) => {
+  const { setMisdemeanors, originalMisdemeanors } = useMisdemeanorsContext();
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedFilter = e.target.value as MisdemeanourKind | "All";
     handleFilter(selectedFilter);
+    if (selectedFilter === "All") {
+      setMisdemeanors(originalMisdemeanors);
+    }
   };
   return (
     <>

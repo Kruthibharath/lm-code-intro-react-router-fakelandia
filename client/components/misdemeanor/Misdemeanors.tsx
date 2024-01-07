@@ -19,16 +19,6 @@ export const Misdemeanors: React.FC<MisdemeanorProps> = ({ misdemeanors }) => {
     <>
       <div style={{ display: "inline-table" }}>
         {misdemeanors ? (
-          /*
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            {misdemeanors.map((misdemeanor, index) => (
-              <div key={index}>
-                <p>{misdemeanor.citizenId}</p>
-                <p>{misdemeanor.date}</p>
-                <p>{misdemeanor.misdemeanour}</p>
-              </div>
-            ))}
-          </div>*/
           <table>
             <thead>
               <tr>

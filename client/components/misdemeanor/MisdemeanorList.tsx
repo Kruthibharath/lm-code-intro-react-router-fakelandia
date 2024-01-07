@@ -17,10 +17,10 @@ export const MisdemeanorList: React.FC = () => {
   }, [misdemeanors]);
   const handleFilter = (selectedFilter: MisdemeanourKind | "All") => {
     if (selectedFilter === "All") {
-      setFilteredMisdemeanorsList(misdemeanors);
+      setFilteredMisdemeanorsList(misdemeanors || null); //null will reset to original list when "All" option is selected
     } else {
       const filtered = misdemeanors.filter((misdemeanor) => {
-        return misdemeanor.misdemeanour === selectedFilter;
+        return misdemeanor.misdemeanour === selectedFilter; //important to return the boolean value from the callback to display the filtered list
       });
       setFilteredMisdemeanorsList(filtered || null);
     }
@@ -35,7 +35,7 @@ export const MisdemeanorList: React.FC = () => {
         filteredMisdemeanorsList.length > 0 ? (
           <Misdemeanors misdemeanors={filteredMisdemeanorsList} />
         ) : (
-          <p>No misdemeanors found!!</p>
+          <p style={{ padding: "20px 0" }}>No misdemeanors found!!</p>
         )}
       </div>
     </>
