@@ -44,6 +44,10 @@ h2 {
 table th {
   padding: 20px;
 }
+tbody tr td:nth-child(3) {
+  width: auto;
+  padding: 0 20px;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;

@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 import { Misdemeanour } from "../../../types/misdemeanor.types";
-//import { useMisdemeanorsContext } from "./useMisdemeanorContext";
 
 interface MisdemeanorsContextProps {
   misdemeanors: Misdemeanour[];

@@ -1,5 +1,8 @@
 import React from "react";
-import { Misdemeanour } from "../../types/misdemeanor.types";
+import {
+  Misdemeanour,
+  MisdemeanourDescriptions,
+} from "../../types/misdemeanor.types";
 
 interface MisdemeanorProps {
   misdemeanors: Misdemeanour[];
@@ -29,11 +32,11 @@ export const Misdemeanors: React.FC<MisdemeanorProps> = ({ misdemeanors }) => {
               </tr>
             </thead>
             <tbody>
-              {misdemeanors.map((item, index) => (
+              {misdemeanors.map((misdemeanor, index) => (
                 <tr key={index}>
-                  <td>{item.citizenId}</td>
-                  <td>{item.date}</td>
-                  <td>{item.misdemeanour}</td>
+                  <td>{misdemeanor.citizenId}</td>
+                  <td>{misdemeanor.date}</td>
+                  <td>{MisdemeanourDescriptions[misdemeanor.misdemeanour]}</td>
                 </tr>
               ))}
             </tbody>
