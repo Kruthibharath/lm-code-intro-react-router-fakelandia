@@ -35,7 +35,7 @@ export const MisdemeanorList: React.FC = () => {
         filteredMisdemeanorsList.length > 0 ? (
           <Misdemeanors misdemeanors={filteredMisdemeanorsList} />
         ) : (
-          <p style={{ padding: "20px 0" }}>No misdemeanors found!!</p>
+          <p>No misdemeanors found!!</p>
         )}
       </div>
     </>

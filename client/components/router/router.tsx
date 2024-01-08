@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { MainLayout } from "../mainlayout/Mainlayout";
-import { Home } from "../Home";
+import { Home } from "../home/Home";
 import { MisdemeanorList } from "../misdemeanor/MisdemeanorList";
 import { Confession } from "../confession/Confession";
 
